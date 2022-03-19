@@ -5,7 +5,9 @@ This repo shows how to easily get started with local spark cluster (one master, 
 ## How to use
 ```
 docker-compose up -d
-docker-compose exec work-env sql.py
+docker-compose exec work-env python sql.py
+ or
+docker-compose exec work-env spark-submit sql.py
 ```
 
 Sample output:
