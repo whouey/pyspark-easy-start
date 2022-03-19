@@ -10,7 +10,7 @@ services:
       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       - SPARK_SSL_ENABLED=no
     volumes:
-      - .:/app
+      - ./scripts:/app
     ports:
       - '127.0.0.1:8080:8080'
   spark-worker-1:
@@ -25,11 +25,11 @@ services:
       - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
       - SPARK_SSL_ENABLED=no
     volumes:
-      - .:/app
+      - ./scripts:/app
   work-env:
     image: docker.io/bitnami/spark:3.1.2
     volumes:
-      - .:/app
+      - ./scripts:/app
     command: tail -f /dev/null
     user: root
     working_dir: /app
